@@ -45,17 +45,17 @@ export const Services = () => {
           {services.map((service, index) => (
             <Card
               key={service.title}
-              className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-border/50 animate-fade-up"
+              className="group relative overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-border/50 animate-fade-up"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <CardHeader>
-                <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
+              <CardHeader className="relative z-10">
+                <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 group-hover:scale-110 transition-all duration-300">
                   <service.icon className="h-8 w-8 text-accent" />
                 </div>
                 <CardTitle className="text-2xl font-display">{service.title}</CardTitle>
                 <CardDescription className="text-base">{service.description}</CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="relative z-10">
                 <ul className="space-y-2">
                   {service.features.map((feature) => (
                     <li key={feature} className="flex items-center text-sm text-muted-foreground">
@@ -65,6 +65,9 @@ export const Services = () => {
                   ))}
                 </ul>
               </CardContent>
+
+              {/* Gradient overlay on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/0 to-primary/0 group-hover:from-accent/10 group-hover:to-primary/5 transition-all duration-500 pointer-events-none" />
             </Card>
           ))}
         </div>

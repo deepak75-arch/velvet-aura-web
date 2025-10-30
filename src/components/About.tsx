@@ -68,14 +68,17 @@ export const About = () => {
             {values.map((value, index) => (
               <div
                 key={value.title}
-                className="p-6 rounded-lg border border-border/50 bg-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                className="group p-6 rounded-lg border border-border/50 bg-card hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 relative overflow-hidden"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 group-hover:scale-110 transition-all duration-300">
                   <value.icon className="h-6 w-6 text-accent" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground mb-2">{value.title}</h3>
+                <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-accent transition-colors">{value.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{value.description}</p>
+                
+                {/* Animated border on hover */}
+                <div className="absolute inset-0 border-2 border-accent/0 group-hover:border-accent/20 rounded-lg transition-all duration-300 pointer-events-none" />
               </div>
             ))}
           </div>

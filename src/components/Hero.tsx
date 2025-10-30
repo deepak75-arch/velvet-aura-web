@@ -36,7 +36,7 @@ export const Hero = () => {
             <Button 
               size="lg" 
               variant="luxury"
-              className="text-lg"
+              className="text-lg animate-glow"
             >
               <Calendar className="mr-2 h-5 w-5" />
               Book Your Appointment
@@ -44,7 +44,7 @@ export const Hero = () => {
             <Button 
               size="lg" 
               variant="outline"
-              className="text-lg border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+              className="text-lg border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:border-accent/50 hover:scale-105 transition-all duration-300"
             >
               <MapPin className="mr-2 h-5 w-5" />
               Visit Us
